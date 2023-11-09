@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_app/Models/Weather_model.dart';
 import 'package:weather_app/shared%20widgets/Search_Field.dart';
@@ -17,10 +18,9 @@ class WithWeatherDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-                style: const TextStyle(fontSize: 20),
+                style:  TextStyle(fontSize: 20.sp),
                 "Today ${weatherModel.date}"),
-            const SizedBox(height: 10),
-
+             SizedBox(height: 10.h),
           ],
         ),
         actions: [
@@ -32,71 +32,71 @@ class WithWeatherDetails extends StatelessWidget {
           child: Stack(
             children: [
               Positioned
-                (top: 0,
-                left: 15,
+                (top: 0.h,
+                left: 15.w,
                 child: Row(
                 children: [
                   const Icon(Icons.location_on_outlined,color: Colors.white70,),
                   Text(
-                      style: const TextStyle(fontSize: 16, color: Colors.white70),
+                      style:  TextStyle(fontSize: 16.sp, color: Colors.white70),
                       "${weatherModel.city}, ${weatherModel.country}")
                 ],
               ),),
               Positioned(
-                top: 10,
-                left: 60,
+                top: 10.h,
+                left: 60.w,
                 child: Opacity(
                   opacity: 0.6,
-                  child: Image.network("https:${weatherModel.image!}",
-                      width: 280, fit: BoxFit.fill),
+                  child: Image.network("https:${weatherModel.image}",
+                      width: 280.w, fit: BoxFit.fill),
                 ),
               ),
               Positioned(
-                top: 155,
-                left: 150,
+                top: 155.h,
+                left: 150.w,
                 child: Column(
                   children: [
                     Text(
                       weatherModel.temp.toInt().toString(),
-                      style: const TextStyle(
-                          fontSize: 110,
+                      style:  TextStyle(
+                          fontSize: 110.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
                     Text(
                       weatherModel.condition,
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                      style:  TextStyle(fontSize: 18.sp, color: Colors.white),
                     ),
                   ],
                 ),
               ),
-              const Positioned(
-                top: 155,
-                left: 270,
+               Positioned(
+                top: 155.h,
+                left: 270.w,
                 child: Text(
                   "°",
                   style: TextStyle(
-                      fontSize: 90,
+                      fontSize: 90.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
               ),
               Positioned(
-                top: 350,
-                left: 25,
+                top: 350.h,
+                left: 25.w,
                 child: Row(
                   children: [
                     Row(
                       children: [
                         const Icon(FontAwesomeIcons.droplet,
                             color: Colors.white70),
-                        const SizedBox(
-                          width: 5,
+                         SizedBox(
+                          width: 5.w,
                         ),
                         Text(
                           "${weatherModel.precip.toInt().toString()}%",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),
@@ -107,66 +107,66 @@ class WithWeatherDetails extends StatelessWidget {
                       children: [
                         const Icon(FontAwesomeIcons.wind,
                             color: Colors.white70),
-                        const SizedBox(
-                          width: 5,
+                         SizedBox(
+                          width: 5.w,
                         ),
                         Text(
                           "${weatherModel.wind.toInt().toString()} Km/h",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      width: 70,
+                     SizedBox(
+                      width: 70.w,
                     ),
                     Row(
                       children: [
                         const Icon(FontAwesomeIcons.temperatureHalf,
                             color: Colors.white70),
-                        const SizedBox(
-                          width: 5,
+                         SizedBox(
+                          width: 5.w,
                         ),
                         Text(
                           "${weatherModel.humidity.toString()}%",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),
                   ],
                 ),
-              ),const Positioned(
-                top: 430,
-                left: 15,
+              ), Positioned(
+                top: 430.h,
+                left: 15.w,
                 child: Text(
                   "3-Day Forcast",
                   style: TextStyle(
-                      fontSize: 20, color: Colors.white),
+                      fontSize: 20.sp, color: Colors.white),
                 ),
               ),
               Positioned(
-                top: 480,
-                left: 15,
+                top: 480.h,
+                left: 15.w,
                 child: Column(
                   children: [
                     Row(
                       children: [
                         Text(
                           weatherModel.forCastDay.date1,
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 18.sp, color: Colors.white60),
                         ),
-                        const SizedBox(width: 80,),
+                         SizedBox(width: 80.w,),
                         Opacity(
                           opacity: 0.6,
                           child: Image.network("https:${weatherModel.image}"),
                         ),
-                        const SizedBox(width: 75,),
+                         SizedBox(width: 75.w,),
                         Text(
                           "${weatherModel.forCastDay.minTemp1.toInt().toString()}°/${weatherModel.forCastDay.maxTemp1.toInt().toString()}°",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),
@@ -174,19 +174,19 @@ class WithWeatherDetails extends StatelessWidget {
                       children: [
                         Text(
                           weatherModel.forCastDay.date2,
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 18.sp, color: Colors.white60),
                         ),
-                        const SizedBox(width: 80,),
+                         SizedBox(width: 80.w,),
                         Opacity(
                           opacity: 0.6,
                           child: Image.network("https:${weatherModel.image2}"),
                         ),
-                        const SizedBox(width: 75,),
+                         SizedBox(width: 75.w,),
                         Text(
                           "${weatherModel.forCastDay.minTemp2.toInt().toString()}°/${weatherModel.forCastDay.maxTemp2.toInt().toString()}°",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),
@@ -194,19 +194,19 @@ class WithWeatherDetails extends StatelessWidget {
                       children: [
                         Text(
                           weatherModel.forCastDay.date3,
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 18.sp, color: Colors.white60),
                         ),
-                        const SizedBox(width: 80,),
+                         SizedBox(width: 80.w,),
                         Opacity(
                           opacity: 0.6,
                           child: Image.network("https:${weatherModel.image3}"),
                         ),
-                        const SizedBox(width: 75,),
+                         SizedBox(width: 75.w,),
                         Text(
                           "${weatherModel.forCastDay.minTemp3.toInt().toString()}°/${weatherModel.forCastDay.maxTemp3.toInt().toString()}°",
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white60),
+                          style:  TextStyle(
+                              fontSize: 20.sp, color: Colors.white60),
                         ),
                       ],
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -10,18 +11,18 @@ class SearchPage extends StatelessWidget {
         title: const Text('Search a City'),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 100),
+        padding: EdgeInsets.symmetric(horizontal: 130.w, vertical: 100.h),
         child: TextField(
           decoration: InputDecoration(
             contentPadding:
-                const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+                EdgeInsets.symmetric(vertical: 5.h, horizontal: 12.w),
             label: const Text('search'),
             suffixIcon: GestureDetector(
               child: const Icon(Icons.search),
             ),
-            border: const OutlineInputBorder(
+            border: OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(15),
+                Radius.circular(15.dm),
               ),
             ),
             hintText: 'Enter a city',

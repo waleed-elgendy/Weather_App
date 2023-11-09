@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/shared%20widgets/Search_Field.dart';
 
 class WeatherFailure extends StatelessWidget {
@@ -16,10 +17,10 @@ class WeatherFailure extends StatelessWidget {
       ),
       body: Container(
         color: const Color(0xff0B0C1E),
-        child: const Center(
+        child:  Center(
           child: Text(
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 32,color: Colors.white),
+              style: TextStyle(fontSize: 32.sp,color: Colors.white),
               "oops there was an error, try later"),
         ),
       ),

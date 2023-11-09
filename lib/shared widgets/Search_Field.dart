@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+
 class SearchField extends StatelessWidget {
-   SearchField({
+  SearchField({
     super.key,
   });
   TextEditingController controller = TextEditingController();
@@ -10,34 +12,34 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10, top: 3),
+      padding: EdgeInsets.only(right: 10.w, top: 3.h),
       child: SizedBox(
-        width: 150,
-        height: 35,
+        width: 150.w,
+        height: 35.h,
         child: TextField(
           controller: controller,
           onSubmitted: (city) async {
-         var getWeatherCubit =  BlocProvider.of<GetWeatherCubit>(context);
-         getWeatherCubit.getWeather(city: city);
-         controller.clear();
-         },
+            var getWeatherCubit = BlocProvider.of<GetWeatherCubit>(context);
+            getWeatherCubit.getWeather(city: city);
+            controller.clear();
+          },
           style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 14),
+              contentPadding: EdgeInsets.symmetric(horizontal: 14.w),
               label: const Text(''),
               suffixIcon: GestureDetector(
                 child: const Icon(Icons.search),
               ),
               suffixIconColor: Colors.white,
-              border: const OutlineInputBorder(
+              border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(15),
+                  Radius.circular(15.dm),
                 ),
               ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white),
                 borderRadius: BorderRadius.all(
-                  Radius.circular(15),
+                  Radius.circular(15.dm),
                 ),
               ),
               enabledBorder: InputBorder.none,
